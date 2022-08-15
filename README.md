@@ -16,11 +16,11 @@
         - [ ] Users can log in with their email and password
 - [ ] Transactions
     - [ ] Creating new transactions
-        - [ ] A transaction is the amount of money that a user either paid or received
+        - [x] A transaction is the amount of money that a user either paid or received
         - [ ] A transaction is associated with a user
-        - [ ] Transactions have a description
-        - [ ] Transactions have an amount
-        - [ ] Transactions have a date
+        - [x] Transactions have a description
+        - [x] Transactions have an amount
+        - [x] Transactions have a date
     - [ ] Editing existing transactions
         - [ ] Description of a transaction can be changed
         - [ ] The amount of a transaction can be changed
