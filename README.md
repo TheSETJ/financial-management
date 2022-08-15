@@ -21,6 +21,7 @@
         - [x] Transactions have a description
         - [x] Transactions have an amount
         - [x] Transactions have a date
+        - [ ] Transactions have a type
     - [ ] Editing existing transactions
         - [ ] Description of a transaction can be changed
         - [ ] The amount of a transaction can be changed
