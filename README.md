@@ -14,10 +14,10 @@
     - [ ] A user must be able to login to their user account using email and password
     - [ ] A user must be able to log out of their user account
 - [ ] Transactions
-    - [ ] A logged-in user must be able to create a new transaction with at least type and amount
-        - [ ] A user can set the type of their transaction to either paid, received, or transferred
-        - [ ] A user may set a description on their transaction
-        - [ ] A user may set a date on their transaction
+    - [x] A logged-in user must be able to create a new transaction with at least type and amount
+        - [x] A user can set the type of their transaction to either paid, received, or transferred
+        - [x] A user may set a description on their transaction
+        - [x] A user may set a date on their transaction
     - [ ] A logged-in user must be able to edit an existing transaction
         - [ ] A user may change the description of a transaction
         - [ ] A user may change the amount of a transaction
