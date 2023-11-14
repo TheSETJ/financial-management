@@ -18,11 +18,11 @@
         - [x] A user can set the type of their transaction to either paid, received, or transferred
         - [x] A user may set a description on their transaction
         - [x] A user may set a date on their transaction
-    - [ ] A logged-in user must be able to edit an existing transaction
-        - [ ] A user may change the description of a transaction
-        - [ ] A user may change the amount of a transaction
-        - [ ] A user may change the date of a transaction
-        - [ ] A user may change the type of a transaction
+    - [x] A logged-in user must be able to edit an existing transaction
+        - [x] A user may change the description of a transaction
+        - [x] A user may change the amount of a transaction
+        - [x] A user may change the date of a transaction
+        - [x] A user may change the type of a transaction
     - [ ] A user can view a list of their transactions in a paginated manner
         - [ ] A user can search through their transaction's descriptions
         - [ ] A user can filter their transactions by date range
