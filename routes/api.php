@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store')->middleware('auth');
+Route::put('/transactions/{transaction}', [TransactionController::class, 'update'])->name('transactions.update')->middleware('auth');
