@@ -24,9 +24,9 @@
         - [x] A user may change the date of a transaction
         - [x] A user may change the type of a transaction
     - [ ] A user can view a list of their transactions in a paginated manner
-        - [ ] A user can search through their transaction's descriptions
-        - [ ] A user can filter their transactions by date range
-        - [ ] A user can filter their transactions by amount range
+        - [x] A user can search through their transaction's descriptions
+        - [x] A user can filter their transactions by date range
+        - [x] A user can filter their transactions by amount range
         - [ ] A user can filter their transactions by one or more tags
 - [ ] Loans
     - [ ] A logged-in user must be able to create a new loan with at least type, amount, and party
