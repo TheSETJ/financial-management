@@ -84,6 +84,9 @@ class UpdateTransactionTest extends TestCase
     {
         $faker = \Faker\Factory::create();
 
+        // Required for date-based tests to pass
+        $faker->setDefaultTimezone('Asia/Tehran');
+
         $type = $faker->randomElement(['paid', 'received', 'transferred']);
         $amount = rand(1, getrandmax());
         $description = $faker->sentence;
