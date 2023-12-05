@@ -127,7 +127,7 @@ class CreateTransactionTest extends TestCase
             'Amount must be an integer' => [
                 [
                     'type' => $faker->randomElement($types),
-                    'amount' => $faker->randomFloat(),
+                    'amount' => $faker->randomFloat(null, 0.1),
                 ],
                 ['amount'],
             ],
