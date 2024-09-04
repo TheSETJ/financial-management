@@ -2,21 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TransactionStoreRequest;
 use App\Models\Transaction;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 
 class TransactionController extends Controller
 {
-    public function store()
+    public function store(TransactionStoreRequest $request)
     {
-        $validated = request()->validate([
-            'type' => ['required', Rule::in(['paid', 'received', 'transferred'])],
-            'amount' => ['required', 'numeric', 'gt:0'],
-            'description' => ['string'],
-        ]);
-
-        Transaction::create($validated);
+        Transaction::create($request->validated());
 
         return response()->json([], 201);
     }
