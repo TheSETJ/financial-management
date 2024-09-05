@@ -1,6 +1,10 @@
 <div class="container">
     <h1>Transactions</h1>
 
+    <a href="{{ route('transactions.create') }}" style="display: inline-block; padding: 10px 20px; color: white; background-color: blue; text-decoration: none; border-radius: 5px;">
+        Create New Transaction
+    </a>
+
     @if($transactions->isEmpty())
         <p>No transactions found.</p>
     @else
