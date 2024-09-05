@@ -6,14 +6,14 @@
 <div class="container">
     <h1>Transactions</h1>
 
-    <a href="{{ route('transactions.create') }}" style="display: inline-block; padding: 10px 20px; color: white; background-color: #4CAF50; text-decoration: none; border-radius: 5px;">
+    <a href="{{ route('transactions.create') }}" class="btn-create">
         Create New Transaction
     </a>
 
     @if($transactions->isEmpty())
         <p>No transactions found.</p>
     @else
-        <table class="table">
+        <table class="transactions-table">
             <thead>
                 <tr>
                     <th>ID</th>
@@ -30,7 +30,7 @@
                         <td>{{ $transaction->type }}</td>
                         <td>{{ $transaction->amount }}</td>
                         <td>{{ $transaction->description }}</td>
-                        <td>{{ $transaction->created_at->format('Y-m-d H:i') }}</td>
+                        <td>{{ $transaction->created_at }}</td>
                     </tr>
                 @endforeach
             </tbody>
