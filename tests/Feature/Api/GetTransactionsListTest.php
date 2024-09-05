@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Api;
 
 use App\Models\Transaction;
 use Illuminate\Foundation\Testing\RefreshDatabase;
@@ -14,7 +14,7 @@ class GetTransactionsListTest extends TestCase
     #[Test]
     public function it_returns_no_transactions_when_none_exist()
     {
-        $response = $this->getJson(route('transactions.index'));
+        $response = $this->getJson(route('api.transactions.index'));
 
         $response->assertOk();
         $response->assertJsonCount(0, 'data');
@@ -29,7 +29,7 @@ class GetTransactionsListTest extends TestCase
             ['description' => 'Transaction C', 'created_at' => now()->subMinutes(1)],
         )->create();
 
-        $response = $this->getJson(route('transactions.index'));
+        $response = $this->getJson(route('api.transactions.index'));
 
         $response->assertOk();
         $response->assertJsonStructure([
@@ -60,7 +60,7 @@ class GetTransactionsListTest extends TestCase
                 ->toArray()
         );
 
-        $response = $this->getJson(route('transactions.index', ['per-page' => 10]));
+        $response = $this->getJson(route('api.transactions.index', ['per-page' => 10]));
 
         $response->assertOk();
         $response->assertJsonCount(10, 'data');
@@ -94,7 +94,7 @@ class GetTransactionsListTest extends TestCase
                 ->toArray()
         );
 
-        $response = $this->getJson(route('transactions.index', ['per-page' => 10, 'page' => 2]));
+        $response = $this->getJson(route('api.transactions.index', ['per-page' => 10, 'page' => 2]));
 
         $response->assertOk();
         $response->assertJsonCount(10, 'data');

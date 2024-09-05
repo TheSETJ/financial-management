@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Feature\Api;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use PHPUnit\Framework\Attributes\Test;
@@ -18,7 +18,7 @@ class CreateTransactionTest extends TestCase
             'amount' => 1,
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertInvalid([
             'type' => 'The type field is required.'
@@ -35,7 +35,7 @@ class CreateTransactionTest extends TestCase
             'amount' => 1,
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertInvalid([
             'type' => 'The selected type is invalid.'
@@ -52,7 +52,7 @@ class CreateTransactionTest extends TestCase
             'amount' => 1,
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertCreated();
 
@@ -67,7 +67,7 @@ class CreateTransactionTest extends TestCase
             'amount' => 1,
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertCreated();
 
@@ -82,7 +82,7 @@ class CreateTransactionTest extends TestCase
             'amount' => 1,
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertCreated();
 
@@ -97,7 +97,7 @@ class CreateTransactionTest extends TestCase
             'amount' => null,
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertInvalid([
             'amount' => 'The amount field is required.'
@@ -114,7 +114,7 @@ class CreateTransactionTest extends TestCase
             'amount' => 'a',
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertInvalid([
             'amount' => 'The amount field must be a number.'
@@ -131,7 +131,7 @@ class CreateTransactionTest extends TestCase
             'amount' => -1,
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertInvalid([
             'amount' => 'The amount field must be greater than 0.'
@@ -148,7 +148,7 @@ class CreateTransactionTest extends TestCase
             'amount' => 0,
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertInvalid([
             'amount' => 'The amount field must be greater than 0.'
@@ -165,7 +165,7 @@ class CreateTransactionTest extends TestCase
             'amount' => 1,
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertCreated();
 
@@ -181,7 +181,7 @@ class CreateTransactionTest extends TestCase
             'description' => 'Buying bread'
         ];
 
-        $response = $this->postJson(route('transactions.store'), $data);
+        $response = $this->postJson(route('api.transactions.store'), $data);
 
         $response->assertCreated();
 
