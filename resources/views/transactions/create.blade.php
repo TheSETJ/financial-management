@@ -1,3 +1,8 @@
+@extends('layouts.app')
+
+@section('title', 'Create Transactions')
+
+@section('content')
 <h1>Create a New Transaction</h1>
 
 <form action="{{ route('transactions.store') }}" method="POST">
@@ -17,3 +22,4 @@
     <br>
     <button type="submit">Create Transaction</button>
 </form>
+@endsection

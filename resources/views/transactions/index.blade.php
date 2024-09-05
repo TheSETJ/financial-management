@@ -1,7 +1,12 @@
+@extends('layouts.app')
+
+@section('title', 'Transactions')
+
+@section('content')
 <div class="container">
     <h1>Transactions</h1>
 
-    <a href="{{ route('transactions.create') }}" style="display: inline-block; padding: 10px 20px; color: white; background-color: blue; text-decoration: none; border-radius: 5px;">
+    <a href="{{ route('transactions.create') }}" style="display: inline-block; padding: 10px 20px; color: white; background-color: #4CAF50; text-decoration: none; border-radius: 5px;">
         Create New Transaction
     </a>
 
@@ -34,3 +39,4 @@
         {{ $transactions->links() }}
     @endif
 </div>
+@endsection
