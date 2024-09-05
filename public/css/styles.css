@@ -35,3 +35,19 @@ footer {
     width: 100%;
     bottom: 0;
 }
+
+.alert {
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.alert-danger {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.text-danger {
+    color: #721c24;
+}

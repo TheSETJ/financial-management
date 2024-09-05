@@ -22,4 +22,19 @@ class CreateTransactionPageTest extends TestCase
         $response->assertSee('Amount:');
         $response->assertSee('Description:');
     }
+
+    #[Test]
+    public function it_displays_validation_errors()
+    {
+        $response = $this->get(route('transactions.create'));
+
+        $response = $this->post(route('transactions.store'), ['amount' => 1]);
+
+        $response->assertRedirect(route('transactions.create'));
+
+        $response = $this->get(route('transactions.create'));
+
+        $response->assertOk();
+        $response->assertSee('The type field is required.');
+    }
 }
