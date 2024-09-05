@@ -23,4 +23,9 @@ class TransactionController extends Controller
 
         return redirect()->route('transactions.index');
     }
+
+    public function create()
+    {
+        return view('transactions.create');
+    }
 }
