@@ -6,11 +6,17 @@
 <div class="container">
     <h1>Transactions</h1>
 
-    <a href="{{ route('transactions.create') }}" class="btn-create">
-        Create New Transaction
-    </a>
+    @if (session('success'))
+        <div class="alert alert-success mb-3">
+            {{ session('success') }}
+        </div>
+    @endif
 
-    @if($transactions->isEmpty())
+    <div class="mb-3">
+        <a href="{{ route('transactions.create') }}" class="btn btn-create">Create Transaction</a>
+    </div>
+
+    @if ($transactions->isEmpty())
         <p>No transactions found.</p>
     @else
         <table class="transactions-table">
@@ -27,16 +33,14 @@
                 @foreach ($transactions as $transaction)
                     <tr>
                         <td>{{ $transaction->id }}</td>
-                        <td>{{ $transaction->type }}</td>
+                        <td>{{ ucfirst($transaction->type) }}</td>
                         <td>{{ $transaction->amount }}</td>
                         <td>{{ $transaction->description }}</td>
-                        <td>{{ $transaction->created_at }}</td>
+                        <td>{{ $transaction->created_at->format('Y-m-d') }}</td>
                     </tr>
                 @endforeach
             </tbody>
         </table>
-
-        {{ $transactions->links() }}
     @endif
 </div>
 @endsection
