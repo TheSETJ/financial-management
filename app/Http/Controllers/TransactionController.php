@@ -28,4 +28,11 @@ class TransactionController extends Controller
     {
         return view('transactions.create');
     }
+
+    public function destroy(Transaction $transaction)
+    {
+        $transaction->delete();
+
+        return redirect()->route('transactions.index');
+    }
 }

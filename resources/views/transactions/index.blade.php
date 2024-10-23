@@ -27,6 +27,7 @@
                     <th>Amount</th>
                     <th>Description</th>
                     <th>Created At</th>
+                    <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
@@ -37,6 +38,13 @@
                         <td>{{ $transaction->amount }}</td>
                         <td>{{ $transaction->description }}</td>
                         <td>{{ $transaction->created_at->format('Y-m-d') }}</td>
+                        <td>
+                            <form action="{{ route('transactions.destroy', $transaction->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this transaction?');">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-create btn-danger">Delete</button>
+                            </form>
+                        </td>
                     </tr>
                 @endforeach
             </tbody>

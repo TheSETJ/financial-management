@@ -121,3 +121,12 @@ main, .transaction-form {
     margin-bottom: 15px;
     box-sizing: border-box;
 }
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-danger:hover {
+    background-color: #c22c3b;
+}
