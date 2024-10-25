@@ -12,8 +12,9 @@
         </div>
     @endif
 
-    <div class="mb-3">
+    <div class="mb-3 d-flex">
         <a href="{{ route('transactions.create') }}" class="btn btn-create">Create Transaction</a>
+        <a href="{{ route('transactions.import.form') }}" class="btn btn-create">Import Transactions</a>
     </div>
 
     @if ($transactions->isEmpty())
