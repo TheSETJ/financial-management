@@ -23,6 +23,7 @@ class TransactionController extends Controller
         return response()->json(
             Transaction::select(['id', 'type', 'amount', 'description', 'created_at'])
                 ->latest()
+                ->latest('id')
                 ->simplePaginate(
                     request()->query('per-page', 20)
                 )

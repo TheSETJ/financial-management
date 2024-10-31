@@ -14,6 +14,7 @@ class TransactionController extends Controller
         return view('transactions.index', [
             'transactions' => Transaction::select(['id', 'type', 'amount', 'description', 'created_at'])
                 ->latest()
+                ->latest('id')
                 ->simplePaginate(
                     request()->query('per-page', 20)
                 )
