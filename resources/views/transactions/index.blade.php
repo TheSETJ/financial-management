@@ -50,6 +50,24 @@
                 @endforeach
             </tbody>
         </table>
+
+        <div class="pagination">
+    <div>
+        @if ($transactions->onFirstPage())
+            <span class="disabled" aria-disabled="true">&laquo; Previous</span>
+        @else
+            <a href="{{ $transactions->previousPageUrl() }}">&laquo; Previous</a>
+        @endif
+    </div>
+    
+    <div>
+        @if ($transactions->hasMorePages())
+            <a href="{{ $transactions->nextPageUrl() }}">Next &raquo;</a>
+        @else
+            <span class="disabled" aria-disabled="true">Next &raquo;</span>
+        @endif
+    </div>
+</div>
     @endif
 </div>
 @endsection

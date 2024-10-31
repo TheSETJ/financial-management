@@ -29,7 +29,6 @@ nav a:hover {
 
 main, .transaction-form {
     padding: 20px;
-    margin-bottom: 60px;
 }
 
 .transaction-form {
@@ -127,4 +126,32 @@ main, .transaction-form {
 
 .btn-danger:hover {
     background-color: #c22c3b;
+}
+
+.pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.pagination a {
+    color: white;
+    background-color: #4CAF50;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: #45a049;
+}
+
+.pagination .disabled {
+    color: #ccc;
+    background-color: #f0f0f0;
+}
+
+.pagination .active a {
+    background-color: #45a049;
+    color: white;
 }
