@@ -14,9 +14,6 @@ header, footer {
 }
 
 footer {
-    position: fixed;
-    width: 100%;
-    bottom: 0;
     padding: 10px 0;
 }
 
@@ -32,6 +29,7 @@ nav a:hover {
 
 main, .transaction-form {
     padding: 20px;
+    margin-bottom: 60px;
 }
 
 .transaction-form {
